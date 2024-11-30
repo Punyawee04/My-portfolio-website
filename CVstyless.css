@@ -35,7 +35,7 @@ body {
 }
 
 .nav-link {
-    color: var(--pink);
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.9rem;
@@ -523,6 +523,7 @@ body {
 
 .scrolling-text p {
     animation: scroll 15s linear infinite;
+    color:white;
 }
 
 /* Base styles จากโค้ดเดิม คงไว้เหมือนเดิม และเพิ่ม Media Queries ด้านล่าง */
