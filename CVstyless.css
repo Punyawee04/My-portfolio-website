@@ -7,6 +7,7 @@
     --text-light: #000000FFFFFF;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -21,8 +22,8 @@ body {
 
 /* Navigation */
 .nav {
-    background-color: var(--orange);
-    padding: 1.5rem 4rem;
+    background-color:#FF4191;
+    padding: 1.8rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,17 +62,20 @@ body {
 
 /* Hero Section */
 .hero {
-    background-color: var(--orange);
+    background-color: #FFF5EF;
     padding: 2rem 4rem 4rem;
     position: relative;
     overflow: hidden;
 }
 
 .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center;
-    color: var(--text-light);
+    text-align: left; /* Align text to the left */
+    gap: 2rem; /* Add spacing between text and image */
 }
 
 .hero-image-wrapper {
@@ -80,20 +84,8 @@ body {
     margin: 2rem auto;
 }
 
-.blob-frame {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensures no overflow */
-    border-radius: 42% 58% 48% 52% / 45% 45% 55% 55%;
-}
 
 
-.pink-bg {
-    background-color: var(--pink);
-}
 
 .hero-image, .blog-image {
     width: 100%;
@@ -106,30 +98,69 @@ body {
     position: absolute;
     color: var(--text-light);
     font-size: 1.5rem;
-    color: white !important;
+    color: #FF4191 !important;
 }
 
 .star-1 { top: 10%; left: -5%; }
 .star-2 { top: 40%; right: -5%; }
 .star-3 { bottom: 15%; left: -8%; }
 
-.hero-text {
-    max-width: 600px;
-    margin: 3rem auto;
-}
 
+
+/* Hero Text Styling */
 .hero-text h1 {
     font-size: 3rem;
+    font-weight: 700;
+    color: black; /* สีเข้มดูเรียบง่าย */
+    animation: fadeInUp 1.5s ease-in-out;
+    letter-spacing: 0.5px; /* เพิ่มความโปร่งให้ตัวอักษร */
+    margin-bottom: 1rem;
+}
+
+.hero-text h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: black; /* สีเทาอ่อนดู minimal */
+    animation: fadeIn 2s ease-in-out;
+    border-bottom: 3px solid #FFD700; /* เส้นใต้สีทอง */
+    display: inline-block;
+    padding-bottom: 0.3rem;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    opacity: 0.9;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: black; /* สีเทาอ่อน */
+    animation: fadeInUp 2.5s ease-in-out;
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.2px;
 }
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .scrolling-text {
     font-style: italic;
@@ -141,9 +172,10 @@ body {
 
 /* Services Section */
 .services {
-    background-color: var(--orange);
+    background-color: #FFF5EF;
     padding: 4rem;
     position: relative;
+
 }
 
 .services-content {
@@ -169,7 +201,7 @@ body {
     text-align: left; /* Align text to the left */
     margin: 0 auto; /* Center the card */
     box-sizing: border-box; /* Include padding in width/height */
-    background-color: var(--pink);
+    background-color: #FF4191;
     padding: 2rem;
     border-radius: 25px;
     width: 280px;
@@ -181,7 +213,7 @@ body {
 .service-card:hover {
     transform: translateY(-10px); /* Lift card on hover */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-    background-color: var(--light-pink); /* Optional: Change background color */
+    background-color: #FFF078; /* Optional: Change background color */
 }
 
 .service-card h3 {
@@ -372,11 +404,93 @@ body {
     color: #555;
 }
 
+/* Awards Timeline Section */
+.awards-timeline {
+    background-color: #FFF5EF;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.awards-title {
+    font-size: 2rem;
+    color: #FF4191;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+/* Timeline Styling */
+.timeline {
+    position: relative;
+    margin: 2rem 0;
+    padding-left: 20px;
+    border-left: 3px solid #FF4191;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between image and content */
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    background-color: #FF4191;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.timeline-content {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.2rem 0;
+}
+
 
 /* Footer */
 .footer {
     padding: 4rem;
-    background-color: var(--light-pink);
+    background-color: #FF4191;
 }
 
 .footer-content {
@@ -392,7 +506,7 @@ body {
 }
 
 .social-section h3 {
-    color: var(--text-dark);
+    color: white;
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
 }
@@ -549,7 +663,7 @@ body {
     }
 
     .hero-image-wrapper {
-        width: 350px;
+        text-align: center;
     }
 
     .hero-text h1 {
@@ -776,8 +890,14 @@ body {
     
 
     .hero-text {
-        margin: 1rem auto;
+        flex: 1;
+        color: var(--text-light);
     }
+
+    .hero-image-wrapper {
+    flex: 1;
+    text-align: center;
+}
 
     .hero-text h1 {
         font-size: 1.8rem;
