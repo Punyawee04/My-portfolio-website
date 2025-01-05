@@ -1,6 +1,6 @@
 :root {
-    --orange: #FF4191;
-    --pink: #FFF078;
+    --orange: #FFCCEA;
+    --pink: #CDC1FF;
     --light-pink: #FFF5EF;
     --dark-pink: #FF8BA7;
     --text-dark: #333333;
@@ -22,7 +22,7 @@ body {
 
 /* Navigation */
 .nav {
-    background-color:#FF4191;
+    background-color:#FFCCEA;
     padding: 1.8rem 4rem;
     display: flex;
     justify-content: space-between;
@@ -44,6 +44,9 @@ body {
     letter-spacing: 1px;
 }
 
+.btn-orange{
+    background-color: #CDC1FF !important;
+}
 .logo {
     color: var(--text-light);
     font-size: 2.5rem;
@@ -61,27 +64,82 @@ body {
 }
 
 /* Hero Section */
+.hero-text {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* จัดปุ่มและข้อความให้ชิดขวา */
+    gap: 1rem; /* ระยะห่างระหว่างแต่ละองค์ประกอบ */
+}
+
+.hero-text p{
+    margin-top: 2px;
+}
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-text h2 {
+    font-size: 1.5rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ff6f61;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+}
+
+.hero-text .btn {
+    margin-top: -1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    color: black;
+    background-color: #ff6f61;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-text .btn:hover {
+    background-color: #e65c50;
+    transform: scale(1.05);
+}
+
+.hero-description {
+    margin-top: -1rem;
+    font-size: 18px;
+    color: #333;
+    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+    padding-left: 100px;
+}
+
 .hero {
     background-color: #FFF5EF;
-    padding: 2rem 4rem 4rem;
-    position: relative;
-    overflow: hidden;
+    padding: 5rem 4rem 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
+
 
 .hero-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* จัดให้อยู่ด้านขวา */
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
-    text-align: left; /* Align text to the left */
-    gap: 2rem; /* Add spacing between text and image */
+    margin: auto;
+    text-align: right;
+    gap: 2rem;
 }
+
 
 .hero-image-wrapper {
     position: relative;
     width: 450px;
-    margin: 2rem auto;
+    margin-left: 2rem auto;
+  
 }
 
 
@@ -98,18 +156,211 @@ body {
     position: absolute;
     color: var(--text-light);
     font-size: 1.5rem;
-    color: #FF4191 !important;
+    color: #FFCCEA !important;
 }
 
 .star-1 { top: 10%; left: -5%; }
 .star-2 { top: 40%; right: -5%; }
 .star-3 { bottom: 15%; left: -8%; }
 
+/*<!-- Navigation Bar -->*/
+/* Navigation Button Styling */
+.navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
 
+.nav-btn {
+    background-color: #f0f0f0;
+    color: #1c1c1c;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #000000;
+    color: #fff;
+}
+
+.nav-btn.active {
+    background-color: #000000;
+    color: #fff;
+    font-weight: bold;
+}
+/* Default display: Show all projects */
+.project-list .experience-card {
+    display: block;
+}
+
+/* Filter logic using :target */
+#Activities ~ .project-list .experience-card:not([data-category="Activities"]) {
+    display: none;
+}
+
+#web ~ .project-list .experience-card:not([data-category="web"]) {
+    display: none;
+}
+
+#bs ~ .project-list .experience-card:not([data-category="bs"]) {
+    display: none;
+}
+
+.nav-btn.active {
+    background-color: #F7418F; /* สีเมื่อปุ่ม active */
+    color: white; /* สีข้อความเมื่อ active */
+    border: 1px solid #F7418F; /* เพิ่มเส้นขอบ */
+}
+
+ /* Experience card styling */
+        /* Card Styling */
+        .experience-card {
+            text-indent: 2rem;
+            position: relative; /* Make it relative to position child elements */
+            display: flex;
+            align-items: center;
+            background-color: transparent !important ;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Image Styling */
+        .preview-img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        /* Experience Details */
+        .experience-details {
+            flex: 1; /* Take up the remaining space */
+        }
+        
+        .experience-details h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .experience-details p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        
+        /* External Link Icon */
+        .external-link {
+            position: absolute; /* Position inside the card */
+            top: 10px; /* Adjust to be in the top-right corner */
+            right: 10px;
+            font-size: 1.5rem;
+            color: #ff6600;
+            text-decoration: none;
+            transition: transform 0.3s, color 0.3s;
+        }
+        
+        .external-link:hover {
+            color: #cc5500;
+            transform: scale(1.2);
+        }
+
+        /* Experience section */
+.experience-section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+/* Experience card styling */
+.experience-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Increased shadow for better hover effect */
+}
+
+/* Company logo box */
+.company-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.company-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Experience details */
+.experience-details h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #222;
+}
+
+.experience-details p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.experience-date {
+    font-size: 0.9rem; /* Adjusted font size for better readability */
+    color: #666;
+}
+
+/* Link styling for external icon */
+.experience-card a {
+    position: absolute; /* Positioned for flexibility */
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #ff6600; /* Orange color for the arrow icon */
+    font-size: 1.5rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.experience-card a:hover {
+    color: #cc5500; /* Slightly darker orange on hover */
+    transform: scale(1.2); /* Adds a hover effect for interactivity */
+}
 
 /* Hero Text Styling */
 .hero-text h1 {
-    font-size: 3rem;
+    font-size: 80px !important;
     font-weight: 700;
     color: black; /* สีเข้มดูเรียบง่าย */
     animation: fadeInUp 1.5s ease-in-out;
@@ -122,7 +373,7 @@ body {
     font-weight: 400;
     color: black; /* สีเทาอ่อนดู minimal */
     animation: fadeIn 2s ease-in-out;
-    border-bottom: 3px solid #FFD700; /* เส้นใต้สีทอง */
+    border-bottom: 4px solid #F7418F; /* เส้นใต้สีทอง */
     display: inline-block;
     padding-bottom: 0.3rem;
     margin-bottom: 1.5rem;
@@ -138,6 +389,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     letter-spacing: 0.2px;
+}
+
+.hero-text:hover a{
+    color: #eb22a4;
 }
 
 /* Keyframes for Animations */
@@ -189,11 +444,11 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 18px;
 }
 
 .services-grid h1 {
-    font-size: 35px ;
+    font-size: 40px ;
     margin-top: -55px;
 }
 
@@ -201,19 +456,20 @@ body {
     text-align: left; /* Align text to the left */
     margin: 0 auto; /* Center the card */
     box-sizing: border-box; /* Include padding in width/height */
-    background-color: #FF4191;
+    background-color: #FFCCEA;
     padding: 2rem;
     border-radius: 25px;
     width: 280px;
     color: var(--text-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 30px;
 }
 
 .service-card:hover {
     transform: translateY(-10px); /* Lift card on hover */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-    background-color: #FFF078; /* Optional: Change background color */
+    background-color: #CDC1FF; /* Optional: Change background color */
 }
 
 .service-card h3 {
@@ -223,7 +479,7 @@ body {
 }
 
 .service-card:hover h3 {
-    color: var(--orange); /* Change heading color on hover */
+    color: #FFF574; /* Change heading color on hover */
 }
 
 .service-card p {
@@ -238,7 +494,7 @@ body {
 }
 
 .bi-box-arrow-in-up-right{
-    color: var(--orange);
+    color: #F7418F;
 
 
 }
@@ -322,18 +578,7 @@ body {
     margin: 0 20px;
 }
 
-.text-project-item1{
-    margin: 10px 20px;
 
-}
-
-.text-project-item2{
-    margin: 0 20px;
-}
-
-.text-project-item3{
-    margin: 0 20px;
-}
 
 .project-image {
     width: 250px; /* กำหนดขนาดรูปภาพ */
@@ -415,7 +660,7 @@ body {
 
 .awards-title {
     font-size: 2rem;
-    color: #FF4191;
+    color: black;
     text-align: center;
     margin-bottom: 2rem;
     font-weight: 700;
@@ -426,7 +671,7 @@ body {
     position: relative;
     margin: 2rem 0;
     padding-left: 20px;
-    border-left: 3px solid #FF4191;
+    border-left: 3px solid #F7418F;
 }
 
 .timeline-item {
@@ -445,7 +690,7 @@ body {
     left: -6px;
     width: 12px;
     height: 12px;
-    background-color: #FF4191;
+    background-color: #F7418F;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -490,7 +735,7 @@ body {
 /* Footer */
 .footer {
     padding: 4rem;
-    background-color: #FF4191;
+    background-color: #FFCCEA;
 }
 
 .footer-content {
@@ -533,26 +778,8 @@ body {
     font-size: 1.5rem;
 }
 
-.sparkl-club {
-    flex: 1;
-    background-color: var(--pink);
-    padding: 3rem;
-    border-radius: 30px;
-    color: var(--text-light);
-    text-align: center;
-}
 
-.sparkl-club h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
 
-.sparkl-club p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
 
 /* Buttons */
 .btn {
