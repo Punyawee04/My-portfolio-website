@@ -603,6 +603,13 @@ body {
     border-radius: 8px; /* มุมมนสำหรับภาพ */
 }
 
+.project-image4{
+    width: 300px; /* กำหนดขนาดรูปภาพ */
+    height: 190px; /* ความสูงของรูปภาพ */
+    object-fit: cover; /* ครอบรูปภาพให้พอดีกับกรอบ */
+    border-radius: 8px; /* มุมมนสำหรับภาพ */
+}
+
 .project-item p {
     text-indent: 2rem; /* กำหนดระยะห่างย่อหน้าของบรรทัดแรก */
     margin: 0; /* ลบระยะห่างเริ่มต้น */
