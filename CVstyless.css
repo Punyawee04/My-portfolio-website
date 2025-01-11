@@ -605,7 +605,7 @@ body {
 
 .project-image4{
     width: 300px; /* กำหนดขนาดรูปภาพ */
-    height: 190px; /* ความสูงของรูปภาพ */
+    height: 121px; /* ความสูงของรูปภาพ */
     object-fit: cover; /* ครอบรูปภาพให้พอดีกับกรอบ */
     border-radius: 8px; /* มุมมนสำหรับภาพ */
 }
