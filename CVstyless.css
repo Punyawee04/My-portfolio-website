@@ -710,6 +710,14 @@ body {
     flex-shrink: 0;
 }
 
+.timeline-image2 {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
 .timeline-content {
     background-color: white;
     border: 1px solid #ddd;
